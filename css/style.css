@@ -4,8 +4,29 @@
   padding: 0;
   box-sizing: border-box; }
 
-html {
-  font-size: 62.5%; }
+@media (min-width: 320px) {
+  html {
+    font-size: 50%; } }
+
+@media (min-width: 400px) {
+  html {
+    font-size: 62.5%; } }
+
+@media (min-width: 600px) {
+  html {
+    font-size: 65%; } }
+
+@media (min-width: 800px) {
+  html {
+    font-size: 70%; } }
+
+@media (min-width: 1000px) {
+  html {
+    font-size: 75%; } }
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 100%; } }
 
 body {
   font-family: 'Baloo 2', cursive;
@@ -17,6 +38,14 @@ body {
   border-radius: 8rem;
   background-color: #eee;
   position: relative; }
+  .main--home {
+    background-image: url("../bg.jpeg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    @media (min-width: 700px) {
+      .main--home {
+        background-position: center; } }
   .main__heading {
     font-size: 5rem;
     letter-spacing: 1rem;
@@ -33,6 +62,9 @@ body {
     @media (min-width: 700px) {
       .main__content {
         padding: 10% 5% 0 5%; } }
+    @media (max-width: 800px) and (max-height: 600px) {
+      .main__content {
+        padding: 5%; } }
   .main__line {
     overflow: visible;
     height: 3rem;
@@ -53,6 +85,9 @@ body {
     font-size: 3.25rem;
     width: 80%;
     margin: auto; }
+    @media (min-width: 900px) {
+      .main__btns {
+        width: 55%; } }
   .main__story {
     text-align: left;
     padding: 0 1rem 10rem 1rem;
@@ -111,3 +146,5 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%; }
+    .main__footer--home {
+      color: #eee; }
