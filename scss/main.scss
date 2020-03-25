@@ -37,26 +37,36 @@ body {
     position: relative;
 
     &--home {
-        background-image: url("../bg.jpeg");
-        background-position: bottom;
+        background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.068), rgba(0, 0, 0, 0.507)),
+        url("../bg.jpeg");
         background-repeat: no-repeat;
+        background-position: bottom;
         background-size: cover;
 
-        @media (min-width: 700px) {
-            background-position: center;
+        @media (min-width: 900px) {
+            background-image: url("../bg-big-screens.jpeg");
         }
-
     }
     
     &__heading {
         font-size: 5rem;
         letter-spacing: 1rem;
         margin-bottom: 1.5rem;
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            i {
+                margin: 0 2rem;
+            }
+        }
     }
 
     &__content {
         text-align: center;
-        padding: 33% 5% 0 5%;
 
         @media (min-width: 374px) {
             padding: 25% 5% 0 5%;
@@ -67,7 +77,9 @@ body {
         @media (min-width: 700px) {
             padding: 10% 5% 0 5%;
         }
-        // Fix
+        @media (min-width: 1000px) {
+            padding: 7.5% 0 0 0;
+        }
     }
 
     &__line {
@@ -92,17 +104,22 @@ body {
 
     &__btns {
         font-size: 3.25rem;
-        width: 80%;
         margin: auto;
 
+        @media (min-width: 300px) {
+            width: 80%;
+        }
         @media (min-width: 900px) {
             width: 55%;
+        }
+        @media (min-width: 1100px) {
+            width: 30%;
         }
     }
 
     &__story {
         text-align: left;
-        padding: 0 1rem 10rem 1rem;
+        padding: 0 1rem 8rem 0;
         line-height: 1.5;
         font-size: 2rem;
         hyphens: auto;
@@ -132,7 +149,7 @@ body {
             justify-content: space-between;
             align-items: center;
 
-            * {
+            & > * {
                 appearance: none;
                 background-color: transparent;
                 border: none;
@@ -155,13 +172,13 @@ body {
     .btn:link,
     .btn:visited {
         margin: 1.5rem 0;
-        border: 1px solid black;
         width: 90%;
         margin-left: 10%;
         display: block;
         text-decoration: none;
-        background-color: black;
-        color: white;
+        background-image: linear-gradient(rgb(26, 25, 25), black);
+        color: #eee;
+        border-bottom: 1px solid #eee;
         border-radius: 3rem;
         &:nth-of-type(even) {
             margin-left: 0;
@@ -172,6 +189,7 @@ body {
     &__footer {
         text-align: center;
         position: absolute;
+        padding: 2rem;
         bottom: 0;
         width: 100%;
 

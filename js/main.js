@@ -58,6 +58,10 @@ function getStoryLength() {
 function updateProgress() {
     let percent = 
     Math.floor((window.pageYOffset / getStoryLength()) * 100);
-    console.log(percent);
-    progress.innerText = `${percent}% read`;
+    if (percent <= 0) {
+        progress.innerText = `0% read`;
+    } else {
+        progress.innerText = `${percent}% read`;
+    }
+    
 }
