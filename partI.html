@@ -9,13 +9,13 @@
     <title>Page</title>
 </head>
 <body>
-    <main class="main">
+    <main id="main" class="main">
         <header id="header" class="main__header">
             <a href="./index.html" class="main__header-option main__header-option--back">
                 <i class="fas fa-arrow-left"></i>
             </a>
-            <p id="progress">
-                
+            <p class="main__header-progress" id="progress">
+                <!-- JS -->
             </p>
             <div class="main__header-font">
                 <button id="fontPlus" class="main__header-option main__header-option--font">
@@ -27,6 +27,35 @@
                 </button>
             </div>
         </header>
+
+        <button id="main-menu" class="main__menu">
+            <i class="fas fa-arrow-alt-circle-right"></i>
+        </button>
+
+        <aside id="main-menu-content" class="main__menu-content">
+            <form id="menu-form" class="main__menu-content-form">
+                <div class="main__menu-content-form-group">
+                    <input type="checkbox" id="hyphens" checked>
+                    <label class="label__check" for="hyphens">Hyphens</label>
+                </div>
+                <div class="main__menu-content-form-group">
+                    <input type="checkbox" id="done">
+                    <label class="label__check" for="done">Mark Story as Read</label>
+                </div>
+                <div class="main__menu-content-form-group">
+                    <label for="themes">Reader Theme</label>
+                    <select class="select" name="themes" id="themes">
+                        <option name="themes" value="default">Default</option>
+                        <option name="themes" value="light">Light</option>
+                        <option name="themes" value="dark">Dark</option>
+                    </select>
+                </div>
+                <div class="main__menu-content-form-group">
+                    <button class="">Save</button>
+                </div>
+            </form>
+        </aside>
+
         <div id="main-content" class="main__content">
             <h1 class="main__title">
                 PART I

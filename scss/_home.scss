@@ -1,0 +1,50 @@
+.main {
+    &--home {
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.068), rgba(0, 0, 0, 0.507)),
+            url("../bg.jpeg");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+
+        @media (min-width: 900px) {
+            background-image: url("../bg-big-screens.jpeg");
+        }
+
+    }
+
+    &__content {
+        text-align: center;
+
+        @media (min-width: 374px) {
+            padding: 25% 5% 0 5%;
+        }
+
+        @media (min-width: 560px) {
+            padding: 18% 5% 0 5%;
+        }
+
+        @media (min-width: 700px) {
+            padding: 10% 5% 0 5%;
+        }
+
+        @media (min-width: 1000px) {
+            padding: 7.5% 0 0 0;
+        }
+    }
+
+    &__btns {
+        font-size: 3.25rem;
+        margin: auto;
+
+        @media (min-width: 300px) {
+            width: 80%;
+        }
+        @media (min-width: 900px) {
+            width: 55%;
+        }
+        @media (min-width: 1100px) {
+            width: 30%;
+        }
+    }
+}
