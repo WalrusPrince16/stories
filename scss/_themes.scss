@@ -1,0 +1,21 @@
+.main {
+    &--default {
+        color: #222831;
+        background-color: #eee;
+    }
+
+    &--light {
+        color: #222831;
+        background-color: #fae7cb;
+    }
+
+    &--dark {
+        background-color: #222831;
+        color: #eee;
+    }
+
+    &--blood-moon {
+        color: #e23e57;
+        background-color: #2b2e4a;
+    }
+}

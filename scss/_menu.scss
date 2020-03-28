@@ -3,11 +3,12 @@
     display: block;
     width: 6rem;
     height: 6rem;
+    border: none;
     opacity: .8;
     border-radius: 50%;
     appearance: none;
-    background-color: black;
-    color: #eee;
+    background-color: inherit;
+    color: inherit;
     position: sticky;
     top: 86vh;
     left: 80vw;
@@ -16,14 +17,19 @@
     transition: all .4s;
     font-size: 5rem;
 
+    // Landscape Phones
+
+    @media (min-width: 736px) and (max-height: 414px) {
+        font-size: 4.5rem;
+        top: 77vh;
+        left: 85vw;
+    }
+
     &--menu-open {
-        color: black;
-        background-color: #eee;
         transform: rotate(180deg);
     }
 
     &-content {
-        border-radius: 5rem;
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -39,6 +45,7 @@
         transition: width .1s, transform .4s;
 
         &-form {
+            font-size: 2.5rem;
             margin: auto;
 
             input[type="checkbox"] {
