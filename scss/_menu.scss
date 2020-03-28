@@ -1,0 +1,116 @@
+.main__menu {
+    cursor: pointer;
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    opacity: .8;
+    border-radius: 50%;
+    appearance: none;
+    background-color: black;
+    color: #eee;
+    position: sticky;
+    top: 86vh;
+    left: 80vw;
+    z-index: 10000;
+    transform: rotate(0);
+    transition: all .4s;
+    font-size: 5rem;
+
+    &--menu-open {
+        color: black;
+        background-color: #eee;
+        transform: rotate(180deg);
+    }
+
+    &-content {
+        border-radius: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 3rem;
+        top: 0;
+        position: fixed;
+        padding: 4rem;
+        height: 100vh;
+        z-index: 1000;
+        width: 100vw;
+        transform: translateX(200%);
+        background-color: inherit;
+        transition: width .1s, transform .4s;
+
+        &-form {
+            margin: auto;
+
+            input[type="checkbox"] {
+                opacity: 0;
+                display: none;
+            }
+
+            input:checked ~ .label__check::after {
+                background-color: #38ee14;
+            }
+
+            button {
+                font-family: inherit;
+                width: 100%;
+                color: currentColor;
+                border: 1px solid currentColor;
+                background-color: transparent;
+                border-radius: 1rem;
+                padding: 1rem 1.5rem;
+                font-size: 2rem;
+            }
+
+            &-group {
+                margin: 2rem 0;
+
+                .select {
+                    border: none;
+                    outline: none;
+                    display: block;
+                    font-size: inherit;
+                    font-family: inherit;
+                    font-weight: 700;
+                    color: currentColor;
+                    line-height: 1;
+                    padding: 1rem 1.5rem 1rem 0;
+                    width: 100%;
+                    max-width: 100%;
+                    box-sizing: border-box;
+                    background-color: transparent;
+                    margin: 0;
+                    border-radius: .5em;
+                    -webkit-appearance: none;
+                    appearance: none;
+                    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+                    background-repeat: no-repeat, repeat;
+                    background-position: right .7em top 50%, 0 0;
+                    background-size: .65em auto, 100%;
+                    background-color: var(--color-primary);
+                }
+
+                .label__check {
+                    position: relative;
+
+                    &::after {
+                        display: inline-block;
+                        position: absolute;
+                        content: "";
+                        top: 50%;
+                        transform: translateY(-50%);
+                        height: 2rem;
+                        width: 2rem;
+                        border-radius: 50%;
+                        right: -3.5rem;
+                        background-color: currentColor;
+                    }
+                }
+            }
+        }
+
+        &--menu-open {
+            transform: translateX(0%);
+        }
+
+    }
+}

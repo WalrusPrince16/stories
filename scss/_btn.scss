@@ -1,0 +1,18 @@
+.btn,
+.btn:link,
+.btn:visited {
+    margin: 1.5rem 0;
+    width: 90%;
+    margin-left: 10%;
+    display: block;
+    text-decoration: none;
+    background-image: linear-gradient(rgb(26, 25, 25), black);
+    color: #eee;
+    border-bottom: 1px solid #eee;
+    border-radius: 3rem;
+
+    &:nth-of-type(even) {
+        margin-left: 0;
+        margin-right: 10%;
+    }
+}

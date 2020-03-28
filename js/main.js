@@ -117,7 +117,7 @@ function updateUI() {
     }
     if (selectedOptions.done) {
         progress.classList.add("main__header-progress--done");
-        progress.innerHTML = "Completed " + "<i class='fas fa-check'></i>";
+        progress.innerHTML = "Completed  " + "<i class='fas fa-check'></i>";
         window.removeEventListener("scroll", updateProgress);
     } else {
         progress.classList.remove("main__header-progress--done");

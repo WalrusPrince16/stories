@@ -1,0 +1,52 @@
+.main__header {
+    z-index: 1000;
+    background-color: transparent;
+    opacity: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 3rem;
+    transition: all .3s;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    &--active {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.75);
+        color: white;
+    }
+
+    &-progress {
+        transition: color .3s;
+
+        &--done {
+            color: rgb(56, 238, 20);
+        }
+    }
+
+    &-font {
+        width: 30%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &>* {
+            appearance: none;
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+    &-option {
+        text-decoration: none;
+        color: white;
+        font-size: 2.5rem;
+
+        &:active {
+            color: #ee5;
+        }
+    }
+
+}
