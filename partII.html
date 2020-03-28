@@ -9,14 +9,16 @@
     <title>Page</title>
 </head>
 <body>
-    <main class="main">
+    <main id="main" class="main">
         <header id="header" class="main__header">
             <a href="./index.html" class="main__header-option main__header-option--back">
                 <i class="fas fa-arrow-left"></i>
             </a>
+
             <p id="progress">
-                
+                <!-- JS -->
             </p>
+
             <div class="main__header-font">
                 <button id="fontPlus" class="main__header-option main__header-option--font">
                     <i class="fas fa-plus"></i>
@@ -43,15 +45,14 @@
                     <label class="label__check" for="done">Mark Story as Read</label>
                 </div>
                 <div class="main__menu-content-form-group">
-                    <label for="themes">Reader Theme</label>
                     <select class="select" name="themes" id="themes">
-                        <option name="themes" value="default">Default</option>
+                        <option name="themes" value="default">Theme (Base)</option>
                         <option name="themes" value="light">Light</option>
                         <option name="themes" value="dark">Dark</option>
                     </select>
                 </div>
                 <div class="main__menu-content-form-group">
-                    <button class="">Save</button>
+                    <button>Save</button>
                 </div>
             </form>
         </aside>
