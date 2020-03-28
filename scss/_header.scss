@@ -1,21 +1,30 @@
 .main__header {
     z-index: 1000;
-    background-color: transparent;
     opacity: 0;
+    color: inherit;
+    background-color: inherit;
     position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 2rem 3rem;
     transition: all .3s;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
 
+    @media (min-width: 370px) {
+        padding: 2rem 3rem;
+    }
+
+    @media (min-width: 370px) {
+        padding: 2rem 3rem;
+    }
+
     &--active {
         opacity: 1;
-        background-color: black;
-        color: #eee;
+        background-color: inherit;
+        color: inherit;
+        border-bottom: 1px solid black;
     }
 
     &-progress {
@@ -32,7 +41,16 @@
         justify-content: space-between;
         align-items: center;
 
+        @media (min-width: 625px) {
+            width: 20%;
+        }
+
+        @media (min-width: 1100px) {
+            width: 15%;
+        }
+
         &>* {
+            color: inherit;
             appearance: none;
             background-color: transparent;
             border: none;
@@ -41,11 +59,12 @@
 
     &-option {
         text-decoration: none;
-        color: white;
+        color: inherit;
         font-size: 2.5rem;
+        transition: all .3s;
 
         &:active {
-            color: #ee5;
+            transform: scale(1.5);
         }
     }
 

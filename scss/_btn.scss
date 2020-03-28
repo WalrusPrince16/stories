@@ -13,6 +13,17 @@
 
     &:nth-of-type(even) {
         margin-left: 0;
-        margin-right: 10%;
+        margin-right: 5%;
+    }
+
+    &--done {
+        font-family: inherit;
+        width: 100%;
+        color: currentColor;
+        border: 1px solid currentColor;
+        background-color: transparent;
+        border-radius: 1rem;
+        padding: 1rem 1.5rem;
+        font-size: 2rem;
     }
 }

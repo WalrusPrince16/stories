@@ -1,15 +1,38 @@
 .main__story {
     text-align: left;
-    padding: 0 1rem 8rem 1rem;
     line-height: 1.5;
     font-size: 2rem;
     transform: translateX(0%);
     transition: transform .4s;
 
+    @media (min-width: 370px) {
+        padding: 0 1rem 16rem 1rem;
+    }
+    @media (min-width: 410px) {
+        padding: 0 1.25rem 18rem 1.25rem;
+    }
+    @media (min-width: 610px) {
+        padding: 0 1.4rem 18rem 1.4rem;
+    }
+    @media (min-width: 810px) {
+        padding: 0 1.6rem 18rem 1.6rem;
+    }
+    @media (min-width: 900px) {
+        padding: 0 3rem 18rem 3rem;
+    }
+    @media (min-width: 1000px) {
+        padding: 0 12rem 18rem 12rem;
+    }
+    @media (min-width: 1200px) {
+        padding: 0 15rem 30rem 15rem;
+    }
+
     &--hyphens {
         hyphens: auto;
         -webkit-hyphens: auto;
     }
+
+    // Move the story content over
 
     &--menu-open {
         transform: translateX(-100%);
