@@ -131,3 +131,12 @@ function updateUI() {
 updateUI();
 
 menuOptions.addEventListener("submit", updateSettings);
+
+// Done Reading Button
+
+const doneReading = document.getElementById("doneReading");
+
+doneReading.addEventListener("click", function(){
+    selectedOptions.done = !(selectedOptions.done);
+    updateUI();
+});

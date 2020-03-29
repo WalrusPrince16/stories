@@ -1,29 +1,35 @@
-.btn,
-.btn:link,
-.btn:visited {
-    margin: 1.5rem 0;
-    width: 90%;
-    margin-left: 10%;
-    display: block;
+.btn {
     text-decoration: none;
-    background-image: linear-gradient(rgb(26, 25, 25), black);
-    color: #eee;
-    border-bottom: 1px solid #eee;
-    border-radius: 3rem;
+    display: block;
+    cursor: pointer;
 
-    &:nth-of-type(even) {
-        margin-left: 0;
-        margin-right: 5%;
+    &--home {
+        margin: 1.5rem 0;
+        width: 90%;
+        margin-left: 10%;
+        background-image: linear-gradient(rgb(26, 25, 25), black);
+        color: #eee;
+        border-bottom: 1px solid #eee;
+        border-radius: 3rem;
+
+        &:nth-of-type(even) {
+            margin-left: 0;
+            margin-right: 5%;
+        }
     }
 
     &--done {
         font-family: inherit;
-        width: 100%;
+        width: 80%;
         color: currentColor;
         border: 1px solid currentColor;
         background-color: transparent;
         border-radius: 1rem;
         padding: 1rem 1.5rem;
         font-size: 2rem;
+        bottom: 13rem;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
     }
 }

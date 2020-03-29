@@ -6,25 +6,25 @@
     transition: transform .4s;
 
     @media (min-width: 370px) {
-        padding: 0 1rem 16rem 1rem;
+        padding: 0 1rem 20rem 1rem;
     }
     @media (min-width: 410px) {
-        padding: 0 1.25rem 18rem 1.25rem;
+        padding: 0 1.25rem 23rem 1.25rem;
     }
     @media (min-width: 610px) {
-        padding: 0 1.4rem 18rem 1.4rem;
+        padding: 0 1.4rem 25rem 1.4rem;
     }
     @media (min-width: 810px) {
-        padding: 0 1.6rem 18rem 1.6rem;
+        padding: 0 1.6rem 27rem 1.6rem;
     }
     @media (min-width: 900px) {
-        padding: 0 3rem 18rem 3rem;
+        padding: 0 3rem 28rem 3rem;
     }
     @media (min-width: 1000px) {
-        padding: 0 12rem 18rem 12rem;
+        padding: 0 12rem 30rem 12rem;
     }
     @media (min-width: 1200px) {
-        padding: 0 15rem 30rem 15rem;
+        padding: 0 15rem 32rem 15rem;
     }
 
     &--hyphens {
