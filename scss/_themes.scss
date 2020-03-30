@@ -2,20 +2,71 @@
     &--default {
         color: #222831;
         background-color: #eee;
+
+        .main__header {
+            color: #eee;
+            background-color: #222831;
+
+            &-progress--done {
+                color: #239d60;
+            }
+        }
+
+        .main__menu-content-form input:checked ~ .label__check::after {
+            background-color: #239d60;
+        }
     }
 
     &--light {
         color: #222831;
         background-color: #fae7cb;
+
+        .main__header {
+            color: #fae7cb;
+            background-color: #222831;
+
+            &-progress--done {
+                color: #6db193;
+            }
+        }
+
+        .main__menu-content-form input:checked ~ .label__check::after {
+            background-color: #6db193;
+        }
     }
 
     &--dark {
-        background-color: #222831;
         color: #eee;
+        background-color: #222831;
+
+        .main__header {
+            border-color: rgba(238, 238, 238, 0.1);
+
+            &-progress--done {
+                color: #49d292;
+            }
+        }
+
+        .main__menu-content-form input:checked ~ .label__check::after {
+            background-color: #49d292;
+        }
     }
 
     &--blood-moon {
         color: #e23e57;
         background-color: #1d1d24;
+
+        .main__header {
+            color: #eee;
+            background-color: #801336;
+
+            &-progress--done {
+                color: #b6fff9;
+            }
+        }
+
+        .main__menu-content-form input:checked ~ .label__check::after {
+            background-color: #a5def1;
+        }
     }
 }

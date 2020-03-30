@@ -1,10 +1,10 @@
 .main {
     min-height: 100vh;
-    border-radius: 8rem;
     background-color: #eee;
     position: relative;
     
     &--home {
+        border-radius: 8rem;
         background-image:
             linear-gradient(rgba(255, 255, 255, 0.068), rgba(0, 0, 0, 0.507)),
             url("../bg.jpeg");
@@ -51,5 +51,12 @@
         @media (min-width: 1100px) {
             width: 30%;
         }
+    }
+
+    .img__bg {
+        position: absolute;
+        transform: scale(.5);
+        top: 0;
+        left: 0;
     }
 }

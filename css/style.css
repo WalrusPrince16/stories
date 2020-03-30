@@ -1,9 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Baloo+2&display=swap");
-:root {
-  --default-text-color: #222831;
-  --default-bg-color: #eee;
-  --default-input-color: #38ee14; }
-
 * {
   margin: 0;
   padding: 0;
@@ -111,10 +106,10 @@ body {
 
 .main {
   min-height: 100vh;
-  border-radius: 8rem;
   background-color: #eee;
   position: relative; }
   .main--home {
+    border-radius: 8rem;
     background-image: linear-gradient(rgba(255, 255, 255, 0.068), rgba(0, 0, 0, 0.507)), url("../bg.jpeg");
     background-repeat: no-repeat;
     background-position: bottom;
@@ -148,6 +143,11 @@ body {
     @media (min-width: 1100px) {
       .main__btns {
         width: 30%; } }
+  .main .img__bg {
+    position: absolute;
+    transform: scale(0.5);
+    top: 0;
+    left: 0; }
 
 .main__heading {
   font-size: 5rem;
@@ -276,7 +276,7 @@ body {
         opacity: 0;
         display: none; }
       .main__menu-content-form input:checked ~ .label__check::after {
-        background-color: #38ee14; }
+        background-color: inherit; }
       .main__menu-content-form button {
         cursor: pointer;
         font-family: inherit;
@@ -311,10 +311,10 @@ body {
           -webkit-appearance: none;
           appearance: none;
           background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+          background-image: url("../arrow.svg");
           background-repeat: no-repeat, repeat;
           background-position: right .7em top 50%, 0 0;
-          background-size: .65em auto, 100%;
-          background-color: var(--color-primary); }
+          background-size: .65em auto, 100%; }
         .main__menu-content-form-group .label__check {
           position: relative; }
           .main__menu-content-form-group .label__check::after {
@@ -334,15 +334,42 @@ body {
 .main--default {
   color: #222831;
   background-color: #eee; }
+  .main--default .main__header {
+    color: #eee;
+    background-color: #222831; }
+    .main--default .main__header-progress--done {
+      color: #239d60; }
+  .main--default .main__menu-content-form input:checked ~ .label__check::after {
+    background-color: #239d60; }
 
 .main--light {
   color: #222831;
   background-color: #fae7cb; }
+  .main--light .main__header {
+    color: #fae7cb;
+    background-color: #222831; }
+    .main--light .main__header-progress--done {
+      color: #6db193; }
+  .main--light .main__menu-content-form input:checked ~ .label__check::after {
+    background-color: #6db193; }
 
 .main--dark {
-  background-color: #222831;
-  color: #eee; }
+  color: #eee;
+  background-color: #222831; }
+  .main--dark .main__header {
+    border-color: rgba(238, 238, 238, 0.1); }
+    .main--dark .main__header-progress--done {
+      color: #49d292; }
+  .main--dark .main__menu-content-form input:checked ~ .label__check::after {
+    background-color: #49d292; }
 
 .main--blood-moon {
   color: #e23e57;
   background-color: #1d1d24; }
+  .main--blood-moon .main__header {
+    color: #eee;
+    background-color: #801336; }
+    .main--blood-moon .main__header-progress--done {
+      color: #b6fff9; }
+  .main--blood-moon .main__menu-content-form input:checked ~ .label__check::after {
+    background-color: #a5def1; }
