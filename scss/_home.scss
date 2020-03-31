@@ -16,8 +16,8 @@
             background-image: url("../bg-big-screens.jpeg");
         }
 
-        @media (max-height: 568px) and (min-width: 320px){
-            border-radius: 4rem;
+        @media (orientation: landscape) and (max-height: 568px) and (min-width: 320px){
+            border-radius: 2rem;
         }
     }
 
@@ -40,7 +40,7 @@
             padding: 7.5% 0 0 0;
         }
 
-        @media (max-height: 568px) and (min-width: 320px){
+        @media (orientation: landscape) and (max-height: 568px) and (min-width: 320px){
             padding: 1rem;
         }
     }
@@ -59,7 +59,7 @@
             width: 30%;
         }
 
-        @media (max-height: 568px) and (min-width: 320px){
+        @media (orientation: landscape) and (max-height: 568px) and (min-width: 320px){
             font-size: 2.5rem;
         }
     }
