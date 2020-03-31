@@ -15,6 +15,11 @@
         .main__menu-content-form input:checked ~ .label__check::after {
             background-color: #239d60;
         }
+
+        .btn--done {
+            border-color: #239d60;
+            color: #239d60;
+        }
     }
 
     &--light {
@@ -33,6 +38,11 @@
         .main__menu-content-form input:checked ~ .label__check::after {
             background-color: #6db193;
         }
+
+        .btn--done {
+            border-color: #6db193;
+            color: #6db193;
+        }
     }
 
     &--dark {
@@ -49,6 +59,11 @@
 
         .main__menu-content-form input:checked ~ .label__check::after {
             background-color: #49d292;
+        }
+
+        .btn--done {
+            border-color: #49d292;
+            color: #49d292;
         }
     }
 
@@ -67,6 +82,11 @@
 
         .main__menu-content-form input:checked ~ .label__check::after {
             background-color: #a5def1;
+        }
+
+        .btn--done {
+            border-color: #a5def1;
+            color: #a5def1;
         }
     }
 }

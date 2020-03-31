@@ -21,33 +21,27 @@ const fontPlus = document.getElementById('fontPlus');
 const fontMinus = document.getElementById('fontMinus');
 let zoomLvl = document.getElementById('zoom');
 
+let zoomBtns = document.querySelector('.main__header-font');
+
 let fontSize = 2;
 
-fontPlus.addEventListener('click', function(){
+function updateZoomLvl(e) {
     getStoryLength();
     updateProgress();
-    fontSize++;
-    if (fontSize >= 6) {
+    const btn = e.target.classList;
+    if (!(btn.contains('fas'))) {return;}
+    const increment = btn.contains('fa-plus') ? 1 : -1;
+    fontSize += increment;
+    if (fontSize === 6 || fontSize === 0) {
         fontSize = 2;
         story.style.fontSize = "2rem";
     } else {
         story.style.fontSize = `${fontSize}rem`;
     }
     zoomLvl.innerText = `${fontSize}x`;
-});
+};
 
-fontMinus.addEventListener('click', function(){
-    getStoryLength();
-    updateProgress();
-    fontSize--;
-    if (fontSize == 0) {
-        fontSize = 2;
-        story.style.fontSize = "2rem";
-    } else {
-        story.style.fontSize = `${fontSize}rem`;
-    }
-    zoomLvl.innerText = `${fontSize}x`;
-});
+zoomBtns.addEventListener('click', updateZoomLvl);
 
 // PROGRESS METER
 
@@ -95,11 +89,13 @@ const done = document.getElementById('done');
 const themes = document.getElementById('themes');
 const main = document .getElementById('main');
 
+// Settings Object
+
 let selectedOptions = {
     hyphens: true,
     done: false,
     theme: "default"
-}
+};
 
 function updateSettings(e) {
     e.preventDefault();
@@ -137,6 +133,7 @@ menuOptions.addEventListener("submit", updateSettings);
 const doneReading = document.getElementById("doneReading");
 
 doneReading.addEventListener("click", function(){
-    selectedOptions.done = !(selectedOptions.done);
+    done.checked = !(done.checked);
+    selectedOptions.done = done.checked;
     updateUI();
 });

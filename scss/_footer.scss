@@ -5,6 +5,11 @@
     bottom: 0;
     width: 100%;
 
+    @media (max-height: 568px) and (min-width: 320px){
+        font-size: .5rem;
+        padding: .5rem;
+    }
+
     &--home {
         color: #eee;
     }

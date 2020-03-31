@@ -14,13 +14,17 @@
 
         &:nth-of-type(even) {
             margin-left: 0;
-            margin-right: 5%;
+            margin-right: 3.5%;
+        }
+
+        @media (max-height: 568px) and (min-width: 320px){
+            width: 55%;
+            margin: 1rem auto !important;
         }
     }
 
     &--done {
         font-family: inherit;
-        width: 80%;
         color: currentColor;
         border: 1px solid currentColor;
         background-color: transparent;
@@ -31,5 +35,25 @@
         left: 50%;
         transform: translateX(-50%);
         position: absolute;
+
+        @media (min-width: 320px) {
+            width: 80%;
+        }
+
+        @media (min-width: 515px) {
+            width: 75%;
+        }
+
+        @media (min-width: 700px) {
+            width: 60%;
+        }
+
+        @media (min-width: 1000px) {
+            width: 45%;
+        }
+
+        @media (min-width: 1300px) {
+            width: 25%;
+        }
     }
 }
