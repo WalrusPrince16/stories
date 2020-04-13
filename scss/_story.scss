@@ -27,9 +27,15 @@
         padding: 0 15rem 32rem 15rem;
     }
 
+    // Settings
+
     &--hyphens {
         hyphens: auto;
         -webkit-hyphens: auto;
+    }
+
+    &--double-spaced {
+        line-height: 2;
     }
 
     // Move the story content over

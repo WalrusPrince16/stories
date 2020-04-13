@@ -1,7 +1,23 @@
-// Header
+// Take Reader Back To Last Position
 
+init();
+
+// DOM
+
+const storyText = document.querySelector(".main__story");
 const header = document.getElementById('header');
 const mainContent = document.getElementById("main-content");
+const story = document.getElementById('story');
+const fontPlus = document.getElementById('fontPlus');
+const fontMinus = document.getElementById('fontMinus');
+let zoomLvl = document.getElementById('zoom');
+let zoomBtns = document.querySelector('.main__header-font');
+const progress = document.getElementById('progress');
+const slideOutMenu = document.getElementById('main-menu');
+const slideOutMenuContent = document.getElementById("main-menu-content");
+
+// Header CSS
+
 let headerShow = mainContent.offsetTop;
 
 window.addEventListener("scroll", toggleHeader);
@@ -14,14 +30,7 @@ function toggleHeader() {
     }
 }
 
-// HEADER
-
-const story = document.getElementById('story');
-const fontPlus = document.getElementById('fontPlus');
-const fontMinus = document.getElementById('fontMinus');
-let zoomLvl = document.getElementById('zoom');
-
-let zoomBtns = document.querySelector('.main__header-font');
+// Header Buttons
 
 let fontSize = 2;
 
@@ -32,6 +41,7 @@ function updateZoomLvl(e) {
     if (!(btn.contains('fas'))) {return;}
     const increment = btn.contains('fa-plus') ? 1 : -1;
     fontSize += increment;
+    localStorage.setItem('zoom', fontSize.toString());
     if (fontSize === 6 || fontSize === 0) {
         fontSize = 2;
         story.style.fontSize = "2rem";
@@ -45,8 +55,6 @@ zoomBtns.addEventListener('click', updateZoomLvl);
 
 // PROGRESS METER
 
-const progress = document.getElementById('progress');
-
 window.addEventListener("scroll", updateProgress);
 
 function getStoryLength() {
@@ -54,6 +62,8 @@ function getStoryLength() {
 }
 
 function updateProgress() {
+    saveProgress();
+
     if (progress.classList.contains("main__header-progress--done")) {
         return;
     } else {
@@ -67,11 +77,12 @@ function updateProgress() {
     }
 }
 
-// SLIDE OUT MENU
+function saveProgress() {
+    toggleHeader();
+    localStorage.setItem('bookmark', window.pageYOffset.toString());
+}
 
-const slideOutMenu = document.getElementById('main-menu');
-const storyText = document.querySelector(".main__story");
-const slideOutMenuContent = document.getElementById("main-menu-content")
+// SLIDE OUT MENU
 
 function slideOut() {
     storyText.classList.toggle("main__story--menu-open");
@@ -81,14 +92,6 @@ function slideOut() {
 
 slideOutMenu.addEventListener("click", slideOut);
 
-// FORM
-
-const menuOptions = document.getElementById('menu-form');
-const hyphens = document.getElementById('hyphens');
-const done = document.getElementById('done');
-const themes = document.getElementById('themes');
-const main = document .getElementById('main');
-
 // Settings Object
 
 let selectedOptions = {
@@ -97,21 +100,36 @@ let selectedOptions = {
     theme: "default"
 };
 
-function updateSettings(e) {
+// FORM
+
+const menuOptions = document.getElementById('menu-form');
+const hyphens = document.getElementById('hyphens');
+const done = document.getElementById('done');
+const themes = document.getElementById('themes');
+const main = document .getElementById('main');
+
+function updateSettingsViaForm(e) {
     e.preventDefault();
+    updateSettings();
+}
+
+function updateSettings() {
     selectedOptions.hyphens = hyphens.checked;
     selectedOptions.done = done.checked;
     selectedOptions.theme = themes.value;
-    updateUI();
+    localStorage.setItem('settings', JSON.stringify(selectedOptions));
+    updateUI(JSON.parse(localStorage.getItem('settings')));
 }
 
-function updateUI() {
-    if (selectedOptions.hyphens) {
+function updateUI(settings) {
+    console.log(settings);
+    if (settings.hyphens) {
         storyText.classList.add("main__story--hyphens");
     } else {
         storyText.classList.remove("main__story--hyphens");
     }
-    if (selectedOptions.done) {
+    hyphens.checked = settings.hyphens;
+    if (settings.done) {
         progress.classList.add("main__header-progress--done");
         progress.innerHTML = "100% read " + "<i class='fas fa-check'></i>";
         window.removeEventListener("scroll", updateProgress);
@@ -120,20 +138,31 @@ function updateUI() {
         updateProgress();
         window.addEventListener("scroll", updateProgress);
     }
-
-    main.className = `main main--${selectedOptions.theme}`;
+    done.checked = settings.done;
+    main.className = `main main--${settings.theme}`;
+    themes.value = settings.theme;
+    console.log(main.className);
 }
 
-updateUI();
+updateUI(
+    JSON.parse(localStorage.getItem('settings')) ? JSON.parse(localStorage.getItem('settings')) : selectedOptions
+);
 
-menuOptions.addEventListener("submit", updateSettings);
+menuOptions.addEventListener("submit", updateSettingsViaForm);
 
 // Done Reading Button
 
 const doneReading = document.getElementById("doneReading");
 
 doneReading.addEventListener("click", function(){
+    let userSettings = JSON.parse(localStorage.getItem('settings'));
     done.checked = !(done.checked);
-    selectedOptions.done = done.checked;
-    updateUI();
+    userSettings.done = done.checked;
+    updateSettings();
 });
+
+// Restore the Reader's Settings
+
+function init() {
+    window.scrollTo(0, +localStorage.getItem("bookmark"));
+}

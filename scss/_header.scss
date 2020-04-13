@@ -9,8 +9,7 @@
     align-items: center;
     width: 100%;
     transition: all .3s;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    box-shadow: 0rem .5rem 1rem;
 
     @media (min-width: 370px) {
         padding: 2rem 3rem;
