@@ -57,7 +57,8 @@ body {
     background-image: linear-gradient(#1a1919, black);
     color: #eee;
     border-bottom: 1px solid #eee;
-    border-radius: 3rem; }
+    border-top: 1px solid #aaa;
+    border-radius: 2.5rem; }
     .btn--home:nth-of-type(even) {
       margin-left: 0;
       margin-right: 3.5%; }
@@ -123,8 +124,6 @@ body {
   .main__story--hyphens {
     hyphens: auto;
     -webkit-hyphens: auto; }
-  .main__story--double-spaced {
-    line-height: 2; }
   .main__story--menu-open {
     transform: translateX(-100%); }
 
@@ -133,7 +132,7 @@ body {
   background-color: #eee;
   position: relative; }
   .main--home {
-    border-radius: 8rem;
+    border-radius: 1rem;
     background-image: linear-gradient(rgba(255, 255, 255, 0.068), rgba(0, 0, 0, 0.507)), url("../bg.jpeg");
     background-repeat: no-repeat;
     background-position: bottom;
@@ -190,6 +189,8 @@ body {
       margin: 0 2rem; }
 
 .main__line {
+  width: 80%;
+  margin: auto;
   overflow: visible;
   height: 3rem;
   border-style: solid;

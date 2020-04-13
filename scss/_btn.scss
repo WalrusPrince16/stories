@@ -10,7 +10,8 @@
         background-image: linear-gradient(rgb(26, 25, 25), black);
         color: #eee;
         border-bottom: 1px solid #eee;
-        border-radius: 3rem;
+        border-top: 1px solid #aaa;
+        border-radius: 2.5rem;
 
         &:nth-of-type(even) {
             margin-left: 0;

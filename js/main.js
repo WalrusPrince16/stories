@@ -1,8 +1,26 @@
+
+
+// DOM
+
+const storyID = document.querySelector(".part").id;
+
 // Take Reader Back To Last Position
 
 init();
 
-// DOM
+// IDs
+let bookmarks = {}
+
+function initBookmarkData(prop) {
+    
+    if (bookmarks) {
+        bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+    } else {
+        bookmarks = {};
+    }
+    bookmarks[storyID] = prop;
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+}
 
 const storyText = document.querySelector(".main__story");
 const header = document.getElementById('header');
@@ -38,10 +56,11 @@ function updateZoomLvl(e) {
     getStoryLength();
     updateProgress();
     const btn = e.target.classList;
-    if (!(btn.contains('fas'))) {return;}
+    if (!(btn.contains('fas'))) {
+        return;
+    }
     const increment = btn.contains('fa-plus') ? 1 : -1;
     fontSize += increment;
-    localStorage.setItem('zoom', fontSize.toString());
     if (fontSize === 6 || fontSize === 0) {
         fontSize = 2;
         story.style.fontSize = "2rem";
@@ -63,12 +82,11 @@ function getStoryLength() {
 
 function updateProgress() {
     saveProgress();
-
     if (progress.classList.contains("main__header-progress--done")) {
         return;
     } else {
-        let percent = 
-        Math.floor((window.pageYOffset / getStoryLength()) * 100);
+        let percent =
+            Math.floor((window.pageYOffset / getStoryLength()) * 100);
         if (percent <= 0) {
             progress.innerText = `0% read`;
         } else {
@@ -79,7 +97,8 @@ function updateProgress() {
 
 function saveProgress() {
     toggleHeader();
-    localStorage.setItem('bookmark', window.pageYOffset.toString());
+    // localStorage.setItem('bookmark', window.pageYOffset.toString());
+    initBookmarkData(window.pageYOffset.toString());
 }
 
 // SLIDE OUT MENU
@@ -106,7 +125,7 @@ const menuOptions = document.getElementById('menu-form');
 const hyphens = document.getElementById('hyphens');
 const done = document.getElementById('done');
 const themes = document.getElementById('themes');
-const main = document .getElementById('main');
+const main = document.getElementById('main');
 
 function updateSettingsViaForm(e) {
     e.preventDefault();
@@ -154,7 +173,7 @@ menuOptions.addEventListener("submit", updateSettingsViaForm);
 
 const doneReading = document.getElementById("doneReading");
 
-doneReading.addEventListener("click", function(){
+doneReading.addEventListener("click", function () {
     let userSettings = JSON.parse(localStorage.getItem('settings'));
     done.checked = !(done.checked);
     userSettings.done = done.checked;
@@ -164,5 +183,7 @@ doneReading.addEventListener("click", function(){
 // Restore the Reader's Settings
 
 function init() {
-    window.scrollTo(0, +localStorage.getItem("bookmark"));
+    let currentPlace = JSON.parse(localStorage.getItem('bookmarks'));
+    let scrollToPoint = currentPlace[storyID];
+    window.scrollTo(0, scrollToPoint);
 }
