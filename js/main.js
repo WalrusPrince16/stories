@@ -184,6 +184,8 @@ doneReading.addEventListener("click", function () {
 
 function init() {
     let currentPlace = JSON.parse(localStorage.getItem('bookmarks'));
-    let scrollToPoint = currentPlace[storyID];
-    window.scrollTo(0, scrollToPoint);
+    if (currentPlace) {
+        let scrollToPoint = currentPlace[storyID];
+        window.scrollTo(0, scrollToPoint);
+    }
 }
