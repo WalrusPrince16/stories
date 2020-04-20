@@ -218,13 +218,13 @@ body {
   align-items: center;
   width: 100%;
   transition: all .3s;
-  box-shadow: 0rem .5rem 1rem; }
+  box-shadow: inherit 0rem .5rem 1rem; }
   @media (min-width: 370px) {
     .main__header {
       padding: 2rem 3rem; } }
-  @media (min-width: 370px) {
+  @media (min-width: 600px) {
     .main__header {
-      padding: 2rem 3rem; } }
+      padding: 2rem 6rem; } }
   .main__header--active {
     opacity: 1;
     background-color: inherit;
@@ -255,6 +255,9 @@ body {
     color: inherit;
     font-size: 2.5rem;
     transition: all .3s; }
+    .main__header-option--back {
+      opacity: 1 !important;
+      transition: none; }
     .main__header-option:active {
       transform: scale(1.5); }
 
@@ -407,9 +410,9 @@ body {
     color: #eee;
     background-color: #801336; }
     .main--blood-moon .main__header-progress--done {
-      color: #b6fff9; }
+      color: #00bfff; }
   .main--blood-moon .main__menu-content-form input:checked ~ .label__check::after {
     background-color: #a5def1; }
   .main--blood-moon .btn--done {
-    border-color: #a5def1;
-    color: #a5def1; }
+    border-color: #00bfff;
+    color: #00bbfa; }

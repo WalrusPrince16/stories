@@ -1,5 +1,3 @@
-
-
 // DOM
 
 const storyID = document.querySelector(".part").id;
@@ -8,11 +6,12 @@ const storyID = document.querySelector(".part").id;
 
 init();
 
-// IDs
+// Stores a unique bookmark for each story
 let bookmarks = {}
 
+// Sets the bookmark for the current story:
+// If 1: 4343, 2: 3299, 3: 4343;
 function initBookmarkData(prop) {
-    
     if (bookmarks) {
         bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
     } else {
@@ -50,7 +49,7 @@ function toggleHeader() {
 
 // Header Buttons
 
-let fontSize = 2;
+let fontSize = 2; // 2rem
 
 function updateZoomLvl(e) {
     getStoryLength();
@@ -85,8 +84,7 @@ function updateProgress() {
     if (progress.classList.contains("main__header-progress--done")) {
         return;
     } else {
-        let percent =
-            Math.floor((window.pageYOffset / getStoryLength()) * 100);
+        let percent = Math.floor((window.pageYOffset / getStoryLength()) * 100);
         if (percent <= 0) {
             progress.innerText = `0% read`;
         } else {
@@ -96,6 +94,7 @@ function updateProgress() {
 }
 
 function saveProgress() {
+    // Restore the header on page load
     toggleHeader();
     // localStorage.setItem('bookmark', window.pageYOffset.toString());
     initBookmarkData(window.pageYOffset.toString());
@@ -141,13 +140,14 @@ function updateSettings() {
 }
 
 function updateUI(settings) {
-    console.log(settings);
     if (settings.hyphens) {
         storyText.classList.add("main__story--hyphens");
     } else {
         storyText.classList.remove("main__story--hyphens");
     }
+
     hyphens.checked = settings.hyphens;
+
     if (settings.done) {
         progress.classList.add("main__header-progress--done");
         progress.innerHTML = "100% read " + "<i class='fas fa-check'></i>";
@@ -157,15 +157,14 @@ function updateUI(settings) {
         updateProgress();
         window.addEventListener("scroll", updateProgress);
     }
+    
     done.checked = settings.done;
     main.className = `main main--${settings.theme}`;
     themes.value = settings.theme;
     console.log(main.className);
 }
 
-updateUI(
-    JSON.parse(localStorage.getItem('settings')) ? JSON.parse(localStorage.getItem('settings')) : selectedOptions
-);
+updateUI(JSON.parse(localStorage.getItem('settings')) ? JSON.parse(localStorage.getItem('settings')) : selectedOptions);
 
 menuOptions.addEventListener("submit", updateSettingsViaForm);
 
