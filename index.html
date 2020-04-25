@@ -1,32 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./js/home.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <script src="./js/home.js" defer></script>
     <script src="https://kit.fontawesome.com/7d32c0b1df.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css">
     <title>WP16&ndash; Home</title>
 </head>
+
 <body>
     <main class="main main--home">
         <div class="main__content">
-            
+
             <h1 class="main__heading">
                 &nvinfin;WP16&nvinfin;
-                <span>
-                    <i class="fas fa-arrow-alt-circle-left"></i>
-                    WALKER
-                    <i class="fas fa-arrow-alt-circle-right"></i>
-                </span>
             </h1>
+
+            <div class="carousel-nav">
+                <div class="carousel-cell">
+                    <div class="main__heading-content">
+                        <i class="fas fa-arrow-alt-circle-left"></i>
+                        <h2>WALKER</h2>
+                        <i class="fas fa-arrow-alt-circle-right"></i>
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <div class="main__heading-content">
+                        <i class="fas fa-arrow-alt-circle-left"></i>
+                        <h2>RADIANT</h2>
+                        <i class="fas fa-arrow-alt-circle-right"></i>
+                    </div>
+                </div>
+                <div class="carousel-cell">
+                    <div class="main__heading-content">
+                        <i class="fas fa-arrow-alt-circle-left"></i>
+                        <h2>Nothing</h2>
+                        <i class="fas fa-arrow-alt-circle-right"></i>
+                    </div>
+                </div>
+            </div>
 
             <hr class="main__line">
 
-            <div class="main__btns">
-                <a href="./partI.html" id="walker-part1" class="btn btn--home" >Walker&ndash;Part I</a>
-                <a href="./partII.html" id="walker-part2" class="btn btn--home">Walker&ndash;Part II</a>
-                <a href="./partIII.html" id="walker-part3" class="btn btn--home">Walker&ndash;Part III</a>
+            <div class="main__btns carousel-main">
+                <div class="carousel-cell">
+                    <a href="./walker-partI.html" class="btn btn--home">Walker&ndash;Part I</a>
+                    <a href="./walker-partII.html" class="btn btn--home">Walker&ndash;Part II</a>
+                    <a href="./walker-partIII.html" class="btn btn--home">Walker&ndash;Part III</a>
+                </div>
+                <div class="carousel-cell">
+                    <a href="./partI.html" class="btn btn--home">Radiant&ndash;Part I</a>
+                    <a href="./partII.html" class="btn btn--home">Radiant&ndash;Part II</a>
+                    <a href="./partIII.html" class="btn btn--home">Radiant&ndash;Part III</a>
+                </div>
+                <div class="carousel-cell">
+                    <a href="./partI.html" class="btn btn--home">Coming Soon&ndash;Part I</a>
+                </div>
             </div>
         </div>
 
@@ -35,4 +69,5 @@
         </footer>
     </main>
 </body>
+
 </html>

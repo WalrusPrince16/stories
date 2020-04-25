@@ -1,0 +1,22 @@
+.carousel-main {
+    .flickity-button {
+        display: none;
+    }
+
+    .carousel-cell {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.carousel-nav {
+    .flickity-prev-next-button {
+        background-color: black;
+        color: white;
+        height: 3rem;
+        width: 3rem;
+    }
+    .carousel-cell {
+        width: 100%;
+    }
+}

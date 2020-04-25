@@ -180,13 +180,14 @@ body {
   font-size: 5rem;
   letter-spacing: 1rem;
   margin-bottom: 1.5rem; }
-  .main__heading span {
+  .main__heading-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem; }
-    .main__heading span i {
-      margin: 0 2rem; }
+    font-size: 2.5rem;
+    z-index: 100; }
+    .main__heading-content i {
+      display: none; }
 
 .main__line {
   width: 80%;
@@ -416,3 +417,19 @@ body {
   .main--blood-moon .btn--done {
     border-color: #00bfff;
     color: #00bbfa; }
+
+.carousel-main .flickity-button {
+  display: none; }
+
+.carousel-main .carousel-cell {
+  width: 100%;
+  height: auto; }
+
+.carousel-nav .flickity-prev-next-button {
+  background-color: black;
+  color: white;
+  height: 3rem;
+  width: 3rem; }
+
+.carousel-nav .carousel-cell {
+  width: 100%; }
