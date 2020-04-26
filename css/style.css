@@ -128,7 +128,8 @@ body {
     transform: translateX(-100%); }
 
 .main {
-  min-height: 100vh;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   background-color: #eee;
   position: relative; }
   .main--home {
@@ -178,8 +179,7 @@ body {
 
 .main__heading {
   font-size: 5rem;
-  letter-spacing: 1rem;
-  margin-bottom: 1.5rem; }
+  letter-spacing: 1rem; }
   .main__heading-content {
     display: flex;
     align-items: center;

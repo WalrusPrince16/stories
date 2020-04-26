@@ -54,12 +54,12 @@
                     <a href="./walker-partIII.html" class="btn btn--home">Walker&ndash;Part III</a>
                 </div>
                 <div class="carousel-cell">
-                    <a href="./partI.html" class="btn btn--home">Radiant&ndash;Part I</a>
-                    <a href="./partII.html" class="btn btn--home">Radiant&ndash;Part II</a>
-                    <a href="./partIII.html" class="btn btn--home">Radiant&ndash;Part III</a>
+                    <a href="#" class="btn btn--home">Radiant&ndash;Part I</a>
+                    <a href="#" class="btn btn--home">Radiant&ndash;Part II</a>
+                    <a href="#" class="btn btn--home">Radiant&ndash;Part III</a>
                 </div>
                 <div class="carousel-cell">
-                    <a href="./partI.html" class="btn btn--home">Coming Soon&ndash;Part I</a>
+                    <a href="#" class="btn btn--home">Coming Soon&ndash;Part I</a>
                 </div>
             </div>
         </div>
@@ -68,6 +68,15 @@
             &copy;2020 WP16
         </footer>
     </main>
+    <script>
+        // We listen to the resize event
+window.addEventListener('resize', () => {
+  // We execute the same script as before
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+    </script>
+    
 </body>
 
 </html>
