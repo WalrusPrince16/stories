@@ -128,9 +128,9 @@ body {
     transform: translateX(-100%); }
 
 .main {
-  height: 100vh;
-  background-color: #eee;
-  position: relative; }
+  min-height: 100vh;
+  position: relative;
+  background-color: #eee; }
   .main--home {
     border-radius: 1rem;
     background-image: linear-gradient(rgba(255, 255, 255, 0.068), rgba(0, 0, 0, 0.507)), url("../bg.jpeg");
@@ -209,7 +209,7 @@ body {
 
 .main__header {
   z-index: 1000;
-  opacity: 0;
+  opacity: 0.25;
   color: inherit;
   background-color: inherit;
   position: fixed;
@@ -255,9 +255,6 @@ body {
     color: inherit;
     font-size: 2.5rem;
     transition: all .3s; }
-    .main__header-option--back {
-      opacity: 1 !important;
-      transition: none; }
     .main__header-option:active {
       transform: scale(1.5); }
 

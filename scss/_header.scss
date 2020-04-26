@@ -1,6 +1,6 @@
 .main__header {
     z-index: 1000;
-    opacity: 0;
+    opacity: 0.25;
     color: inherit;
     background-color: inherit;
     position: fixed;
@@ -62,14 +62,11 @@
         font-size: 2.5rem;
         transition: all .3s;
 
-        &--back {
-            opacity: 1 !important;
-            transition: none;
-        }
-
         &:active {
             transform: scale(1.5);
         }
     }
+
+
 
 }

@@ -1,7 +1,7 @@
 .main {
-    height: 100vh;
-    background-color: #eee;
+    min-height: 100vh;
     position: relative;
+    background-color: #eee;
     
     &--home {
         border-radius: 1rem;
